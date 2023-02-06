@@ -68,7 +68,8 @@
       <div class="col-9">
         <main class="container p-4">
           <!-- Varor eller tjänster-->
-          <div class="row group gap-2">
+          <ul class="row group gap-2" id="cardList">
+
             <div class="card p-0">
               <img class="card-img-top" src="400.jpg" alt="Vara" />
 
@@ -188,14 +189,23 @@
                 </div>
                 <div class="modal-body">
                   <p>Lista varor</p>
-                  <ul class="cartList"></ul>
+                  <ul id="cartList" class="list-unstyled">
+                    <li>
+                      <div class="row">
+                        <p class="col">Vara</p>
+                      <button class="btn btn-light col" data-bs-dismiss="modal">Ta bort</button>
+                      </div>
+                      
+                
+                    </li>
+                  </ul>
                 </div>
                 <div class="modal-footer">
                   <button class="btn btn-light">Beställ</button>
                 </div>
               </div>
             </div>
-          </div>
+          </ul>
         </main>
       </div>
     </div>
