@@ -1,3 +1,18 @@
-.card{
-    max-width:200px;
+body {
+    background-color: antiquewhite;
+}
+
+h1, h2, h3 {
+    font-family:'Times New Roman', Times, serif;
+}
+
+.card {
+    max-width: 200px;
+    background-color: white;
+    border: none;
+}
+
+.img {
+    /* max-width: px;
+    max-height: px; */
 }
