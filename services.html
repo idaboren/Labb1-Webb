@@ -54,170 +54,77 @@
       </nav>
     </header>
 
-    <div class="row">
+    <main class="row">
+      <!-- Beställning -->
       <div class="col-auto p-4">
         <div class="card p-0">
           <div class="card-body">
             <h3>Din beställning</h3>
             <ul id="cartList" class="list-unstyled me-2"></ul>
+            <hr />
+            <p id="priceTotal"></p>
           </div>
           <div class="card-footer border-0 bg-white text-center">
-            <div class="btn btn-light">Beställ</div>
+            <button
+              class="btn btn-light"
+              data-bs-toggle="modal"
+              data-bs-target="#finishOrderModal"
+            >
+              Beställ
+            </button>
           </div>
         </div>
-
-        <!-- <button
-          class="btn btn-light"
-          data-bs-toggle="modal"
-          data-bs-target="#cart"
-        >
-          Din beställning
-        </button> -->
       </div>
+      <!-- Slut beställning -->
 
+      <!-- Produkter -->
       <div class="col">
-        <main class="container p-4">
-          <!-- Varor eller tjänster-->
-          <ul class="row group gap-2" id="cardList">
-            <div class="card p-0">
-              <img class="card-img-top" src="400.jpg" alt="Vara" />
+        <div class="container p-4">
+          <!-- Produklista -->
+          <ul class="row group gap-2" id="cardList"></ul>
 
-              <div class="card-body">
-                <h2 class="card-title">Vara</h2>
-              </div>
-
-              <div class="card-footer bg-white border-0 p-1">
-                <div class="row">
-                  <div class="col">
-                    <button
-                      class="btn btn-light"
-                      data-bs-toggle="modal"
-                      data-bs-target="#productInformation"
-                    >
-                      Läs mer
-                    </button>
-                  </div>
-
-                  <div class="col-auto">
-                    <button
-                      class="btn btn-light"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modal"
-                    >
-                      Lägg till
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card p-0">
-              <img class="card-img-top" src="400.jpg" alt="Vara" />
-
-              <div class="card-body">
-                <h2 class="card-title">Vara</h2>
-              </div>
-
-              <div class="card-footer bg-white border-0 p-1">
-                <div class="row">
-                  <div class="col">
-                    <button
-                      class="btn btn-light"
-                      data-bs-toggle="modal"
-                      data-bs-target="#productInformation"
-                    >
-                      Läs mer
-                    </button>
-                  </div>
-
-                  <div class="col-auto">
-                    <button
-                      class="btn btn-light"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modal"
-                    >
-                      Lägg till
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card p-0">
-              <img class="card-img-top" src="400.jpg" alt="Vara" />
-
-              <div class="card-body py-1 px-1">
-                <div class="row p-2">
-                  <h2 class="card-title">Vara</h2>
-                </div>
-
-                <div class="row">
-                  <div class="col">
-                    <button
-                      class="btn btn-light"
-                      data-bs-toggle="modal"
-                      data-bs-target="#productInformation"
-                    >
-                      Läs mer
-                    </button>
-                  </div>
-
-                  <div class="col-auto">
-                    <button
-                      class="btn btn-light"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modal"
-                    >
-                      Lägg till
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="modal" id="productInformation">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h2>Vara</h2>
-                    <button class="btn-close" data-bs-dismiss="modal"></button>
-                  </div>
-                  <div class="modal-body">
-                    <p>Information</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- <div class="modal" id="cart">
+          <!-- Produktinformation -->
+          <div class="modal" id="productInformationModal">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h2>Beställning</h2>
-                  <button class="btn-close" data-bs-dismiss="modal"></button>
+                  <h2 id="productName">Vara</h2>
+                  <button
+                    id="closeModal"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                  ></button>
                 </div>
                 <div class="modal-body">
-                  <p>Lista varor</p>
-                  <ul id="cartList" class="list-unstyled">
-                    <li>
-                      <div class="row">
-                        <p class="col">Vara</p>
-                      <button class="btn btn-light col" data-bs-dismiss="modal">Ta bort</button>
-                      </div>
-                      
-                
-                    </li>
-                  </ul>
-                </div>
-                <div class="modal-footer">
-                  <button class="btn btn-light">Beställ</button>
+                  <p id="productInfo">Information</p>
                 </div>
               </div>
-            </div> -->
-          </ul>
-        </main>
+            </div>
+          </div>
+          <!-- Slut produktinformation -->
+
+          <!-- Beställning -->
+          <div class="modal" id="finishOrderModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button
+                    id="closeModal"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <p>Tack för din beställning!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slut beställning -->
+        </div>
       </div>
-    </div>
+      <!-- Slut produkter -->
+    </main>
 
     <footer>
       <!-- kort kontakt, info? -->

@@ -8,8 +8,11 @@ class Product {
   }
 }
 
-let product1 = new Product("Bakelse", "Innehåller mjöl", 20000);
-product1 = {
+const cardList = document.getElementById("cardList");
+const cartList = document.getElementById("cartList");
+const finishOrderModal = document.getElementById("finishOrderModal");
+
+const product1 = {
   name: "Bakelse",
   image: "400.jpg",
   altText: "Bakelse",
@@ -38,6 +41,9 @@ const cart = [product1, product2, product2];
 
 showProducts();
 showCart();
+finishOrderModal.onclick = () => {
+  finishOrder();
+};
 
 function showProducts() {
   for (const product of products) {
@@ -45,16 +51,16 @@ function showProducts() {
     const cardImage = document.createElement("img");
     const cardBody = document.createElement("div");
     const cardTitle = document.createElement("h2");
+    const cardPrice = document.createElement("p");
     const cardFooter = document.createElement("div");
     const readMoreButton = document.createElement("button");
     const addToCartButton = document.createElement("button");
 
-    cardImage.src = product.image;
-    cardImage.alt = product.altText;
     card.classList.add("card", "p-0");
     cardImage.classList.add("card-img-top");
     cardBody.classList.add("card-body");
     cardTitle.classList.add("card-title");
+    cardPrice.classList.add("card-text");
     cardFooter.classList.add(
       "card-footer",
       "bg-white",
@@ -66,60 +72,91 @@ function showProducts() {
     readMoreButton.classList.add("btn", "btn-light", "m-1");
     addToCartButton.classList.add("btn", "btn-light", "m-1");
 
-    //cardImage
+    cardImage.src = product.image;
+    cardImage.alt = product.altText;
     cardTitle.innerText = product.name;
+    cardPrice.innerText = `${product.price} kr`;
     readMoreButton.innerText = "Läs mer";
     addToCartButton.innerText = "Lägg till";
 
-    readMoreButton.onClick = () => {}; // open modal
-    addToCartButton.onClick = () => {
+    readMoreButton.onclick = () => {
+      readMore(product);
+    };
+    addToCartButton.onclick = () => {
       addToCart(product);
     };
 
-    const cardList = document.querySelector("#cardList");
     cardFooter.append(readMoreButton, addToCartButton);
-    cardBody.append(cardTitle);
+    cardBody.append(cardTitle, cardPrice);
     card.append(cardImage, cardBody, cardFooter); //cardImage
     cardList.append(card);
   }
 }
 
 function showCart() {
+  let price = 0;
   for (const product of cart) {
     const cartItem = document.createElement("li");
     const row = document.createElement("div");
     const productName = document.createElement("p");
     const removeFromCartButton = document.createElement("button");
 
-    row.classList.add("row");
+    row.classList.add("row", "align-items-center");
     productName.classList.add("col");
-    removeFromCartButton.classList.add("btn", "btn-close", "col-end");
+    removeFromCartButton.classList.add(
+      "btn",
+      "btn-sm",
+      "btn-light",
+      "col-auto"
+    );
 
-    //removeFromCartButton.innerText = "Ta bort";
+    removeFromCartButton.innerText = "Ta bort";
     productName.innerText = product.name;
 
-    removeFromCartButton.onClick = (product) => {
+    removeFromCartButton.onclick = (product) => {
       removeFromCart(product);
     };
 
     row.append(productName, removeFromCartButton);
     cartItem.append(row);
-    const cartList = document.querySelector("#cartList");
     cartList.append(cartItem);
+
+    price += product.price;
   }
+  const priceTotal = document.getElementById("priceTotal");
+  priceTotal.innerText = `Totalt pris: ${price} kr`;
 }
 
-function readMore() {
-  //....
+function readMore(product) {
+  const modal = document.getElementById("productInformationModal");
+  const closeButton = document.getElementById("closeModal");
+  const productName = document.getElementById("productName");
+  const productInfo = document.getElementById("productInfo");
+
+  productName.innerText = product.name;
+  productInfo.innerText = product.description;
+
+  modal.style.display = "block";
+  closeButton.onclick = () => {
+    modal.style.display = "none";
+  };
 }
 
 function addToCart(product) {
   cart.push(product);
+  while (cartList.childElementCount > 0) {
+    cartList.children[0].remove();
+  }
   showCart();
 }
 
 function removeFromCart(product) {
   const index = cart.indexOf(product);
   cart.splice(index, 1);
+  while (cartList.childElementCount > 0) {
+    cartList.children[0].remove();
+  }
   showCart();
 }
+
+function finishOrder() {}
