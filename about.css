@@ -1,0 +1,27 @@
+body {
+    background-color: antiquewhite;
+}
+
+h1, h2 {
+    font-family:'Times New Roman', Times, serif;
+}
+
+h2 {
+    font-size: x-large;
+}
+
+.container{
+    max-width: fit-content;
+}
+
+.col {
+    /* max-width:550px;
+    min-width:510px; */
+}
+
+#aboutImg {
+    max-width: 500px;
+    max-height: 350px;
+    margin-bottom:1em;
+    object-fit: scale-down;
+}

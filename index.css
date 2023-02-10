@@ -1,4 +1,21 @@
-img {
-    max-height: max-content;
-    max-width: max-content;
+body {
+    background-color: antiquewhite;
+}
+
+h1, h2 {
+    font-family:'Times New Roman', Times, serif;
+}
+
+h2 {
+    font-size: x-large;
+}
+
+.container{
+    max-width: 900px;
+    justify-content: center;
+}
+
+#homeImg {
+    width: 500px;
+    height: auto;
 }
