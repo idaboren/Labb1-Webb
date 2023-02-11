@@ -137,7 +137,7 @@ function showCart() {
     removeFromCartButton.innerText = "Ta bort";
     productName.innerText = product.name;
 
-    removeFromCartButton.onclick = (product) => {
+    removeFromCartButton.onclick = () => {
       removeFromCart(product);
     };
 

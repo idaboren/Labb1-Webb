@@ -17,5 +17,6 @@ h2 {
 
 #homeImg {
     width: 500px;
-    height: auto;
+    height: 350px;
+    object-fit: contain;
 }

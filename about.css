@@ -14,14 +14,13 @@ h2 {
     max-width: fit-content;
 }
 
-.col {
-    /* max-width:550px;
-    min-width:510px; */
+.col{
+    max-width: 500px;
+    min-width:300px;
+    object-fit: contain;
 }
 
-#aboutImg {
-    max-width: 500px;
-    max-height: 350px;
-    margin-bottom:1em;
-    object-fit: scale-down;
+iframe{
+    width: 310px;
+    height: 250px;
 }
