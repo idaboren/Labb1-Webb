@@ -10,25 +10,25 @@ class Product {
 
 const product1 = {
   name: "Baguette",
-  image: "pexels-pixabay-461060.jpg",
-  altText: "Bakelse",
-  description: "Innehåller mjöl.",
+  image: "pexels-pixabay-461060-tn.jpg",
+  altText: "Baguetter",
+  description: "Ingredienser: mjöl",
   price: 20000,
 };
 
 const product2 = {
   name: "Bröd",
-  image: "pexels-magda-ehlers-1586947.jpg",
-  altText: "Bröd",
-  description: "Innehåller också mjöl.",
+  image: "pexels-magda-ehlers-1586947-tn.jpg",
+  altText: "Uppskivat bröd",
+  description: "Ingredienser: mjöl",
   price: 40000,
 };
 
 const product3 = {
   name: "Tårta",
-  image: "pexels-marta-dzedyshko-2067436.jpg",
-  altText: "Tårta",
-  description: "Innehåller grädde.",
+  image: "pexels-marta-dzedyshko-2067436-tn.jpg",
+  altText: "Chokladtårta",
+  description: "Ingredienser: grädde",
   price: 60000,
 };
 
@@ -36,7 +36,7 @@ const cardList = document.getElementById("cardList");
 const cartList = document.getElementById("cartList");
 const finishOrderModal = document.getElementById("finishOrderModal");
 const products = [product1, product2, product3, product1, product2, product3];
-const cart = [product1, product2, product2];
+const cart = [];
 
 showProducts();
 showCart();

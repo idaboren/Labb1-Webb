@@ -30,6 +30,6 @@ h2 {
 @media only screen and (max-width: 768px) {
     #homeImg {
         max-width: autopx;
-    height: auto;
+        height: auto;
     }
   }
