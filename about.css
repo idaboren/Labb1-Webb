@@ -12,7 +12,7 @@ h2 {
 }
 
 .navbar {
-    background-color: #F1E0C5;
+    background-color: #F3E8D6;
 }
 
 .container{
@@ -21,7 +21,7 @@ h2 {
 
 .col{
     max-width: 500px;
-    min-width:300px;
+    min-width: 300px;
     object-fit: contain;
 }
 

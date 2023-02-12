@@ -12,7 +12,7 @@ h2 {
 }
 
 .navbar {
-    background-color: #F1E0C5;
+    background-color: #F3E8D6;
     
 }
 
@@ -24,5 +24,12 @@ h2 {
 #homeImg {
     width: 1000px;
     height: 667px;
-    object-fit: contain;
+    object-fit: cover;
 }
+
+@media only screen and (max-width: 768px) {
+    #homeImg {
+        max-width: autopx;
+    height: auto;
+    }
+  }

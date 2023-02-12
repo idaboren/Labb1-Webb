@@ -8,10 +8,6 @@ class Product {
   }
 }
 
-const cardList = document.getElementById("cardList");
-const cartList = document.getElementById("cartList");
-const finishOrderModal = document.getElementById("finishOrderModal");
-
 const product1 = {
   name: "Baguette",
   image: "pexels-pixabay-461060.jpg",
@@ -30,12 +26,15 @@ const product2 = {
 
 const product3 = {
   name: "Tårta",
-  image: "pexels-thirdman-7600413.jpg",
+  image: "pexels-marta-dzedyshko-2067436.jpg",
   altText: "Tårta",
   description: "Innehåller grädde.",
   price: 60000,
 };
 
+const cardList = document.getElementById("cardList");
+const cartList = document.getElementById("cartList");
+const finishOrderModal = document.getElementById("finishOrderModal");
 const products = [product1, product2, product3, product1, product2, product3];
 const cart = [product1, product2, product2];
 
@@ -153,7 +152,9 @@ function removeFromCart(product) {
 }
 
 function finishOrder() {
+  while (cartList.childElementCount > 0) {
+    cartList.children[0].remove();
+  }
   cart.length = 0;
-
   showCart();
 }
