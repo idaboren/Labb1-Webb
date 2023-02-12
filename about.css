@@ -1,13 +1,18 @@
 body {
-    background-color: antiquewhite;
+    background-color: #FDF4E6;
 }
 
 h1, h2 {
     font-family:'Times New Roman', Times, serif;
+    color: #365656;
 }
 
 h2 {
     font-size: x-large;
+}
+
+.navbar {
+    background-color: #F1E0C5;
 }
 
 .container{

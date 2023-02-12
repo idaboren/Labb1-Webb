@@ -6,6 +6,10 @@
     <!-- Meta -->
     <meta charset="utf-8" />
     <meta
+    name="description"
+    content="Bageriets produkter"
+  />
+    <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
@@ -36,7 +40,7 @@
     <header>
       <!-- Navigation -->
       <nav
-        class="navbar navbar-expand navbar-light bg-light justify-content-center"
+        class="navbar navbar-expand navbar-light justify-content-center"
       >
         <h1 class="m-2">Bageriet</h1>
         <ul class="nav navbar-nav">
@@ -59,7 +63,7 @@
     <main class="container">
       <div class = "row">
         
-        <!-- Beställning -->
+        <!-- Order -->
       <div class="col-auto p-4">
         <div class="card">
           <div class="card-body">
@@ -68,7 +72,7 @@
             <hr />
             <p id="priceTotal"></p>
           </div>
-          <div class="card-footer border-0 bg-white text-center">
+          <div class="card-footer">
             <button
               class="btn btn-light"
               data-bs-toggle="modal"
@@ -79,15 +83,15 @@
           </div>
         </div>
       </div>
-      <!-- Slut beställning -->
+      <!-- End order -->
 
-      <!-- Produkter -->
+      <!-- Products -->
       <div class="col p-4">
         
           <!-- Produklista -->
           <div class="row gap-2" id="cardList"></ul>
 
-          <!-- Produktinformation -->
+          <!-- Product information -->
           <div class="modal" id="productInformationModal">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -105,9 +109,9 @@
               </div>
             </div>
           </div>
-          <!-- Slut produktinformation -->
+          <!-- End product information -->
 
-          <!-- Beställning -->
+          <!-- Finish order -->
           <div class="modal" id="finishOrderModal">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -119,15 +123,16 @@
                   ></button>
                 </div>
                 <div class="modal-body">
+                  <h2></h2>
                   <p>Tack för din beställning!</p>
                 </div>
               </div>
             </div>
           </div>
-          <!-- Slut beställning -->
+          <!-- End finish order -->
         </div>
       </div>
-      <!-- Slut produkter -->
+      <!-- En products -->
       
     </main>
   </body>

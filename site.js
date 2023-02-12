@@ -13,8 +13,8 @@ const cartList = document.getElementById("cartList");
 const finishOrderModal = document.getElementById("finishOrderModal");
 
 const product1 = {
-  name: "Bakelse",
-  image: "400.jpg",
+  name: "Baguette",
+  image: "pexels-pixabay-461060.jpg",
   altText: "Bakelse",
   description: "Innehåller mjöl.",
   price: 20000,
@@ -22,7 +22,7 @@ const product1 = {
 
 const product2 = {
   name: "Bröd",
-  image: "400.jpg",
+  image: "pexels-magda-ehlers-1586947.jpg",
   altText: "Bröd",
   description: "Innehåller också mjöl.",
   price: 40000,
@@ -30,37 +30,13 @@ const product2 = {
 
 const product3 = {
   name: "Tårta",
-  image: "400.jpg",
+  image: "pexels-thirdman-7600413.jpg",
   altText: "Tårta",
   description: "Innehåller grädde.",
   price: 60000,
 };
 
-const product4 = {
-  name: "Tårta",
-  image: "400.jpg",
-  altText: "Tårta",
-  description: "Innehåller grädde.",
-  price: 60000,
-};
-
-const product5 = {
-  name: "Tårta",
-  image: "400.jpg",
-  altText: "Tårta",
-  description: "Innehåller grädde.",
-  price: 60000,
-};
-
-const product6 = {
-  name: "Tårta",
-  image: "400.jpg",
-  altText: "Tårta",
-  description: "Innehåller grädde.",
-  price: 60000,
-};
-
-const products = [product1, product2, product3, product4, product5, product6];
+const products = [product1, product2, product3, product1, product2, product3];
 const cart = [product1, product2, product2];
 
 showProducts();
@@ -85,14 +61,7 @@ function showProducts() {
     cardBody.classList.add("card-body");
     cardTitle.classList.add("card-title");
     cardPrice.classList.add("card-text");
-    cardFooter.classList.add(
-      "card-footer",
-      "bg-white",
-      "border-0",
-      "p-1",
-      "pt-0",
-      "text-center"
-    );
+    cardFooter.classList.add("card-footer", "p-1", "pt-0");
     readMoreButton.classList.add("btn", "btn-light", "m-1");
     addToCartButton.classList.add("btn", "btn-light", "m-1");
 
@@ -183,4 +152,8 @@ function removeFromCart(product) {
   showCart();
 }
 
-function finishOrder() {}
+function finishOrder() {
+  cart.length = 0;
+
+  showCart();
+}
